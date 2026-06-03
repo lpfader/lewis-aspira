@@ -109,11 +109,11 @@ h2 {
 .dropdown-menu {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
   transition: all 0.3s ease;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
   background-color: #fff;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -122,15 +122,9 @@ h2 {
   margin: 0;
   min-width: 180px;
   z-index: 1001;
-
-  /* Force vertical stacking */
-  display: block;
 }
 
-/* Dropdown links */
-.dropdown-menu li {
-  display: block; /* ensures each item is on its own line */
-}
+
 
 .dropdown-menu li a {
   display: block;
@@ -208,6 +202,12 @@ h2 {
   margin: 0;
   padding: 0;
 }
+
+.nav-menu .dropdown-menu {
+  display: block !important;
+  white-space: nowrap; /* prevents text wrapping */
+}
+
 
 .nav-menu a {
   text-decoration: none;
