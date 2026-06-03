@@ -26,3 +26,10 @@ body {
 h2 {
   color: #00a86b;
 }
+
+.centered-image {
+  display: block;        /* allows margin auto to work */
+  margin: 0 auto;        /* centers the image */
+  max-width: 90%;        /* adds left/right margin visually */
+  height: auto;          /* keeps proportions */
+}
