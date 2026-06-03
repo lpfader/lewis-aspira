@@ -102,8 +102,8 @@ h2 {
 
 .hero {
   position: relative;
-  text-align: center;
-  color: #fff;
+  width: 100%;
+  height: auto;
 }
 
 .hero img {
@@ -112,15 +112,25 @@ h2 {
   display: block;
 }
 
-.hero-text {
+/* Opaque left overlay */
+.hero-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25%; /* one quarter of the image width */
   background-color: rgba(0, 168, 107, 0.7); /* Aspira green overlay */
-  padding: 20px 40px;
-  border-radius: 12px;
-  max-width: 80%;
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: center; /* horizontal centering of text */
+  text-align: center;
+  color: #fff;
+}
+
+/* Text inside overlay */
+.hero-text {
+  padding: 20px;
+  max-width: 90%;
 }
 
 .hero-text h1 {
@@ -132,10 +142,16 @@ h2 {
   font-size: 1.1rem;
 }
 
-@media (max-width: 600px) {
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .hero-overlay {
+    width: 100%; /* full width on mobile */
+    height: auto;
+    position: relative;
+  }
+
   .hero-text {
     padding: 16px 24px;
-    max-width: 90%;
   }
 
   .hero-text h1 {
@@ -146,6 +162,7 @@ h2 {
     font-size: 1rem;
   }
 }
+
 
 /* Header container */
 .site-header {
@@ -262,9 +279,16 @@ h2 {
     position: static;
     box-shadow: none;
     transform: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
   }
 }
+
 
 
