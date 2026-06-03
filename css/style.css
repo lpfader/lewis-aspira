@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+.cta-button {
+  background-color: #dff3e6;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #bfe8cf;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #00a86b;
+}
