@@ -219,7 +219,10 @@ h2 {
 
 /* Dropdown menu hidden by default */
 .dropdown-menu {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
   position: absolute;
   top: 100%;
   left: 0;
@@ -246,9 +249,11 @@ h2 {
   background-color: #dff3e6;
 }
 
-/* Show dropdown on hover */
+/* Slide down on hover */
 .dropdown:hover .dropdown-menu {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* Responsive tweak */
@@ -256,6 +261,10 @@ h2 {
   .dropdown-menu {
     position: static;
     box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
   }
 }
+
 
