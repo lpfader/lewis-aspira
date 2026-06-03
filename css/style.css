@@ -151,6 +151,10 @@ h2 {
   transform: translateY(0);
 }
 
+.nav-menu .dropdown-menu {
+  display: block !important;
+}
+
 /* Responsive tweak */
 @media (max-width: 768px) {
   .dropdown-menu {
