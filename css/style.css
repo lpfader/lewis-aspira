@@ -33,3 +33,69 @@ h2 {
   max-width: 90%;        /* adds left/right margin visually */
   height: auto;          /* keeps proportions */
 }
+
+/* Base form layout */
+.open-house-form {
+  max-width: 600px;      /* keeps it centered and readable */
+  margin: 40px auto;     /* centers the form on the page */
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Labels */
+.open-house-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs + Select */
+.open-house-form input,
+.open-house-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Checkbox alignment */
+.open-house-form .checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.open-house-form .checkbox input {
+  width: auto;
+  margin-top: 4px;
+}
+
+/* Submit button */
+.open-house-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .open-house-form {
+    padding: 16px;
+    margin: 20px;
+  }
+
+  .open-house-form button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
