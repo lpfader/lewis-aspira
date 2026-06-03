@@ -100,6 +100,73 @@ h2 {
   }
 }
 
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 180px;
+  z-index: 1001;
+
+  /* Force vertical stacking */
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-menu li {
+  display: block; /* ensures each item is on its own line */
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #00a86b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #dff3e6;
+}
+
+/* Slide down on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
 
 
 /* Header container */
@@ -167,74 +234,6 @@ h2 {
   }
 }
 
-/* Dropdown container */
-.dropdown {
-  position: relative;
-}
-
-/* Dropdown menu hidden by default */
-.dropdown-menu {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  min-width: 180px;
-  z-index: 1001;
-}
-
-/* Force dropdown items to stack vertically */
-.dropdown-menu {
-  display: flex;
-  flex-direction: column; /* stack items top to bottom */
-  align-items: flex-start; /* align text to the left */
-}
-
-
-/* Dropdown links */
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
-  color: #00a86b;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #dff3e6;
-}
-
-/* Slide down on hover */
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Responsive tweak */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    transform: none;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-}
 
 /* HERO WRAPPER */
 .hero {
