@@ -100,68 +100,6 @@ h2 {
   }
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Opaque left overlay */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 25%; /* one quarter of the image width */
-  background-color: rgba(0, 168, 107, 0.7); /* Aspira green overlay */
-  display: flex;
-  align-items: center; /* vertical centering */
-  justify-content: center; /* horizontal centering of text */
-  text-align: center;
-  color: #fff;
-}
-
-/* Text inside overlay */
-.hero-text {
-  padding: 20px;
-  max-width: 90%;
-}
-
-.hero-text h1 {
-  margin: 0 0 10px;
-  font-size: 2rem;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-}
-
-/* Responsive tweak */
-@media (max-width: 768px) {
-  .hero-overlay {
-    width: 100%; /* full width on mobile */
-    height: auto;
-    position: relative;
-  }
-
-  .hero-text {
-    padding: 16px 24px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-}
 
 
 /* Header container */
@@ -253,6 +191,14 @@ h2 {
   z-index: 1001;
 }
 
+/* Force dropdown items to stack vertically */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column; /* stack items top to bottom */
+  align-items: flex-start; /* align text to the left */
+}
+
+
 /* Dropdown links */
 .dropdown-menu li a {
   display: block;
@@ -290,5 +236,76 @@ h2 {
   }
 }
 
+/* HERO WRAPPER */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+/* HERO IMAGE */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* LEFT OPAQUE OVERLAY (DESKTOP) */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;          /* full height of the image */
+  width: 25%;            /* one quarter of the image */
+  background-color: rgba(0, 168, 107, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* TEXT INSIDE OVERLAY */
+.hero-text {
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+}
+
+/* MOBILE LAYOUT — OVERLAY MOVES BELOW IMAGE */
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero img {
+    order: 1;
+  }
+
+  .hero-overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    order: 2;
+    margin-top: 10px; /* optional spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
 
 
