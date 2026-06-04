@@ -1,11 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+/* ---------------- CTA BUTTON ---------------- */
 .cta-button {
   background-color: #dff3e6;
   color: #000;
   font-weight: 600;
-  padding: 12px 28px;
+  padding: 6px 14px;
   border-radius: 30px;
   text-decoration: none;
   display: inline-block;
@@ -16,6 +17,7 @@
   background-color: #bfe8cf;
 }
 
+/* ---------------- GLOBAL ---------------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -28,23 +30,22 @@ h2 {
 }
 
 .centered-image {
-  display: block;        /* allows margin auto to work */
-  margin: 0 auto;        /* centers the image */
-  max-width: 90%;        /* adds left/right margin visually */
-  height: auto;          /* keeps proportions */
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  height: auto;
 }
 
-/* Base form layout */
+/* ---------------- FORM ---------------- */
 .open-house-form {
-  max-width: 600px;      /* keeps it centered and readable */
-  margin: 40px auto;     /* centers the form on the page */
+  max-width: 600px;
+  margin: 40px auto;
   padding: 20px;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Labels */
 .open-house-form label {
   display: block;
   margin-bottom: 6px;
@@ -52,7 +53,6 @@ h2 {
   color: #333;
 }
 
-/* Inputs + Select */
 .open-house-form input,
 .open-house-form select {
   width: 100%;
@@ -64,7 +64,6 @@ h2 {
   box-sizing: border-box;
 }
 
-/* Checkbox alignment */
 .open-house-form .checkbox {
   display: flex;
   align-items: flex-start;
@@ -77,7 +76,6 @@ h2 {
   margin-top: 4px;
 }
 
-/* Submit button */
 .open-house-form button {
   width: 100%;
   padding: 14px;
@@ -87,7 +85,6 @@ h2 {
   cursor: pointer;
 }
 
-/* Responsive tweaks */
 @media (max-width: 480px) {
   .open-house-form {
     padding: 16px;
@@ -100,101 +97,92 @@ h2 {
   }
 }
 
-/* Dropdown container */
+/* ---------------- DROPDOWN ---------------- */
 .dropdown {
   position: relative;
 }
 
-/* Dropdown menu hidden by default */
 .dropdown-menu {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  transform: translateY(-10px);
   background-color: #fff;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   list-style: none;
-  padding: 10px 0;
+  padding: 6px 0;
   margin: 0;
   min-width: 180px;
   z-index: 1001;
+flex-direction: column;
 }
 
-
-
 .dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #00a86b;
   text-decoration: none;
   font-weight: 500;
 }
 
+
 .dropdown-menu li a:hover {
   background-color: #dff3e6;
 }
 
-/* Slide down on hover */
 .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: none;
 }
 
-.nav-menu .dropdown-menu {
-  display: block !important;
-}
-
-/* Responsive tweak */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    transform: none;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+/* Dropdown menu items stacked vertically */
+.dropdown-menu {
+  display: block; /* replaces flex or inline layout */
 }
 
 
-/* Header container */
+/* ---------------- HEADER ---------------- */
 .site-header {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* subtle opaque background */
-  position: fixed; /* stays above all content */
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Layout */
+@media (max-width: 768px) {
+  .site-header {
+    position: static;
+    box-shadow: none;
+  }
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 40px;
+  margin: auto;
+  padding: 10px 20px;
 }
 
-/* Logo */
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* Navigation */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
 .nav-menu ul {
   list-style: none;
   display: flex;
@@ -202,12 +190,6 @@ h2 {
   margin: 0;
   padding: 0;
 }
-
-.nav-menu .dropdown-menu {
-  display: block !important;
-  white-space: nowrap; /* prevents text wrapping */
-}
-
 
 .nav-menu a {
   text-decoration: none;
@@ -220,7 +202,6 @@ h2 {
   color: #007a50;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -239,37 +220,36 @@ h2 {
 }
 
 
-/* HERO WRAPPER */
+/* ---------------- HERO ---------------- */
 .hero {
   position: relative;
   width: 100%;
+  margin-bottom: 40px; /* add space so text starts clearly below the image+overlay */
 }
 
-/* HERO IMAGE */
 .hero img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* LEFT OPAQUE OVERLAY (DESKTOP) */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;          /* full height of the image */
-  width: 25%;            /* one quarter of the image */
+  width: 25%;
+  height: 100%; /* matches the hero (image) height */
   background-color: rgba(0, 168, 107, 0.7);
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: #fff;
   padding: 20px;
 }
 
-/* TEXT INSIDE OVERLAY */
+
 .hero-text {
   max-width: 90%;
 }
@@ -283,7 +263,6 @@ h2 {
   font-size: 1.1rem;
 }
 
-/* MOBILE LAYOUT — OVERLAY MOVES BELOW IMAGE */
 @media (max-width: 768px) {
   .hero {
     display: flex;
@@ -299,7 +278,7 @@ h2 {
     width: 100%;
     height: auto;
     order: 2;
-    margin-top: 10px; /* optional spacing */
+    margin-top: 10px;
   }
 
   .hero-text h1 {
@@ -311,4 +290,21 @@ h2 {
   }
 }
 
+/* ---------------- NAV TEXT SHRINK ---------------- */
+@media (max-width: 900px) {
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+}
 
+@media (max-width: 700px) {
+  .nav-menu a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-menu a {
+    font-size: 0.7rem;
+  }
+}
